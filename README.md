@@ -2,12 +2,12 @@
 Template for building Ruby application development environment on Docker.  
 
 ## Stack
-- Ruby 2.5.1
+- Ruby 2.6.1
 
 ## Readying
 
 ```shell
-$ docker pull ruby:2.5.1
+$ docker pull ruby:2.6.1
 ```
 
 ```shell
@@ -22,5 +22,6 @@ $ cd ruby_on_docker
 $ vim app.rb
 
 # Execute the above script
-docker-compose run --rm app ruby app.rb
+$ docker-compose run --rm app ruby app.rb
+# or docker-compose run --rm --service-ports app ruby app.rb
 ```
