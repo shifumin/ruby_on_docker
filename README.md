@@ -2,12 +2,12 @@
 Template for building Ruby application development environment on Docker.  
 
 ## Stack
-- Ruby 2.6.1
+- Ruby 2.6.2
 
 ## Readying
 
 ```shell
-$ docker pull ruby:2.6.1
+$ docker pull ruby:2.6.2
 ```
 
 ```shell
