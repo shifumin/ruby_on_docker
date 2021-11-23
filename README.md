@@ -11,8 +11,8 @@ $ docker pull ruby:2.7.4-alpine
 ```
 
 ```shell
-$ git clone https://github.com/shifumin/ruby_on_docker
-$ cd ruby_on_docker
+$ git clone https://github.com/shifumin/ruby_on_docker dir_name
+$ cd dir_name
 ```
 
 ## Examples
