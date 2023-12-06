@@ -1,13 +1,13 @@
 # Ruby on Docker
-Template for building Ruby application development environment on Docker.  
+Template for building Ruby application development environment on Docker.
 
 ## Stack
-- Ruby 2.7.4
+- Ruby 3.2.2
 
 ## Readying
 
 ```shell
-$ docker pull ruby:2.7.4-alpine
+$ docker pull ruby:3.2.2
 ```
 
 ```shell
@@ -22,6 +22,6 @@ $ cd dir_name
 $ vim app.rb
 
 # Execute the above script
-$ docker-compose run --rm app ruby app.rb
-# or docker-compose run --rm --service-ports app ruby app.rb
+$ docker compose run --rm app ruby app.rb
+# or docker compose run --rm --service-ports app ruby app.rb
 ```

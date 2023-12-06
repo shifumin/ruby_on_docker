@@ -1,20 +1,16 @@
-FROM ruby:2.7.4-alpine
+FROM ruby:3.2.2
 ENV LANG C.UTF-8
+
+# throw errors if Gemfile has been modified since Gemfile.lock
+RUN bundle config --global frozen 1
 
 RUN mkdir /app
 WORKDIR /app
 
-RUN apk update && \
-    apk upgrade && \
-    apk add --update --no-cache \
-        ruby-dev \
-        build-base
-
 RUN gem install bundler --no-document && \
     gem update --system
 
-COPY Gemfile Gemfile
-COPY Gemfile.lock Gemfile.lock
+COPY Gemfile Gemfile.lock ./
 RUN bundle install --jobs=4 --no-cache
 
 COPY . .
