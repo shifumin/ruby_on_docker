@@ -1,16 +1,14 @@
 FROM ruby:3.2.2
-ENV LANG C.UTF-8
+ENV ROOT="/app"
+ENV LANG=C.UTF-8
+ENV TZ=Asia/Tokyo
 
-# throw errors if Gemfile has been modified since Gemfile.lock
-RUN bundle config --global frozen 1
-
-RUN mkdir /app
-WORKDIR /app
+WORKDIR ${ROOT}
 
 RUN gem install bundler --no-document && \
     gem update --system
 
-COPY Gemfile Gemfile.lock ./
+COPY Gemfile Gemfile.lock ${ROOT}
 RUN bundle install --jobs=4 --no-cache
 
 COPY . .
